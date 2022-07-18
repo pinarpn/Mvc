@@ -1,0 +1,28 @@
+﻿@model Proje.Models.Etkinlik_Kategorileri
+@{
+    ViewBag.Title = "KategoriEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>KategoriEkle</h2>
+
+@using (Html.BeginForm("KategoriEkle", "Etkinlik_Kategorileri_", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">Kategori ADI</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(Model => Model.KategoriAdi, new { @class = "form-control", @Placeholder = "Kategori Adını Giriniz" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label">Kategori AÇIKLAMA</label>
+        <div class="col-sm-10">
+            @Html.TextAreaFor(Model => Model.KategoriAciklama, new { @class = "form-control", @Placeholder = "Kategori Açıklama Giriniz", @rows = "7" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="card-footer">
+            <button type="submit" name="button" class="btn btn-primary float-right" style="width:200px">Ekle</button>
+
+        </div>
+    </div>}
